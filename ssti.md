@@ -1,51 +1,12 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/Demodd/Demodd.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Demodd/Demodd.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-
-
-分隔符
+##分隔符
 {{}}:直接输出表达式的内容，{{2*4}}会输出8
 
 {%%}:用于执行一些控制语句
 
 {##}:用于注释模板文件的内容,其中包含的内容不会在页面输出
-控制语句
+##控制语句
 图片: https://uploader.shimo.im/f/sY5vUabLNYgWE5Oz.png
-过滤器
+##过滤器
 图片: https://uploader.shimo.im/f/U67O1A8HSjhQgBNN.png
 
 
@@ -54,6 +15,8 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 
 Example
 注入源码
+
+```
 from flask import Flask
 from flask import request
 from flask import config
@@ -70,6 +33,8 @@ def say_hello():
     return render_template_string(template)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
+    
+```
 在控制语句中，使用set来定义变量
 {%set username = 'admin'%}{{username}}
 图片: https://uploader.shimo.im/f/lx1DualHaP9YQFXQ.png
@@ -78,7 +43,8 @@ if __name__ == '__main__':
 条件
 {%if 1==1%}{{"success"}}{%endif%}
 
-ssti常用属性
+
+##ssti常用属性
 __class__:用于获取当前对象所对应的类
 __base__:返回一个类所直接继承的类
 __mro__:返回一个类所继承的所有类
@@ -172,7 +138,7 @@ length()返回字符串的长度，别名是count
 
 
 
-常用方法
+##常用方法
 __subclasses__:继承此类的子类，返回一个列表
 __getattribute__:获取某个类的属性
 调试时常用函数
@@ -200,7 +166,7 @@ if __name__ == '__main__':
   (<class '__main__.B'>, <class '__main__.A'>, <class 'object'>)
   
 
-ssti的一般流程
+##ssti的一般流程
 获取某个类 -> 获取到类的基类:Object -> 获取其所有子类 -> 通过获取__globals__来获取os,file或其他能执行命令or读取文件的moudle
 随便获取一个类
 #python中遵循万物皆对象,所以字符串列表字典等，都是对象。既然是对象，就是基于类创建的。我们可以使用''.__class__来获取到任意一个类
