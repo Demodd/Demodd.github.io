@@ -30,3 +30,5 @@ highlight_file()
 show_source()
 ```
 参考yu师傅博客:https://blog.csdn.net/miuzzx/article/details/104372662
+
+[反序列化.pdf](https://github.com/Demodd/Demodd.github.io/files/6291477/default.pdf)
