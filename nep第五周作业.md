@@ -12,7 +12,9 @@ typora-root-url: images
 
 访问是一个登陆界面，访问robots.txt 
 
-![1620283269839](F:\笔记\1620283269839.png)我们尝试访问User.php.bak，500，访问image.php.bak，下载php文件 
+![image](https://user-images.githubusercontent.com/81904597/117298376-e33c0680-aea9-11eb-9342-ba0f7bfb78d9.png)
+
+我们尝试访问User.php.bak，500，访问image.php.bak，下载php文件 
 
 ```php
 <?php
@@ -74,13 +76,15 @@ for i in range(0, 30):
 PHP开启短标签即short_open_tag=on时，可以使用输出变量。我们抓包将文件名改为<?=$_GET['cmd']; ?>
 ```
 
-![1620283396118](F:\笔记\1620283396118.png)根目录拿到flag 
+![image](https://user-images.githubusercontent.com/81904597/117298465-f9e25d80-aea9-11eb-8fd2-7af5f4830d0e.png)
+根目录拿到flag 
 
 ## 很好的色彩呃？ 
 
 下载后是一张gif的图片,图片本身有留个不同的颜色，qq截图时按住crtl可以查看色道 
 
-![1620283652609](/1620283652609.png)
+![image](https://user-images.githubusercontent.com/81904597/117298525-0a92d380-aeaa-11eb-9864-3ae2fa70c832.png)
+
 
 ```
 #8B8B61
@@ -105,7 +109,8 @@ flag{aapjes}
 https://cn.bing.com/search?q=key%E4%B8%8D%E5%9C%A8%E8%BF%99%E9%87%8C&m=10210897103375566531005253102975053545155505050521025256555254995410298561015151985150375568&qs=n&form=QBRE&sp=-1&sc=0-38&sk=&cvid=2CE15329C18147CBA4C1CA97C8E1BB8C
 ```
 
-![1620285843632](/1620285843632.png)
+![image](https://user-images.githubusercontent.com/81904597/117298577-1aaab300-aeaa-11eb-8443-b78ec6a08a04.png)
+
 
 可以看到url里藏了一堆ascii码,尝试转换 
 
@@ -129,7 +134,8 @@ print(flag)
 
 图片的左上角有一块东西 
 
-![1620285922282](/1620285922282.png)
+![image](https://user-images.githubusercontent.com/81904597/117298637-2d24ec80-aeaa-11eb-8c0c-7c469e9e1404.png)
+
 
 ``` 
 00110001001
@@ -140,17 +146,19 @@ print(flag)
 10011100000
 ```
 
-![1620285970959](/1620285970959.png)
+![image](https://user-images.githubusercontent.com/81904597/117298638-2d24ec80-aeaa-11eb-9297-ac3de880558e.png)
+
 
 ## [ACTF新生赛2020]frequency 
 
 word里隐藏字体,感觉是base但是解密后就卡住了 
 
-![1620286048457](/1620286048457.png)
+![image](https://user-images.githubusercontent.com/81904597/117298681-3a41db80-aeaa-11eb-9f11-5ef417fb9461.png)
+
 
  看wp，在详细信息里还有一部分，合起来base解密,然后词频分析拿到flag 
+![image](https://user-images.githubusercontent.com/81904597/117298704-4168e980-aeaa-11eb-9c35-a887c69b0f78.png)
 
-![1620286072093](/1620286072093.png)
 
 词频分析:<http://www.aihanyu.org/cncorpus/CpsTongji.aspx> 
 
@@ -168,17 +176,19 @@ flag{r3ce1ved_4n_img}
 
 ## [SCTF2019]Ready_Player_One 
 
-![1620286179055](/1620286179055.png)
+![image](https://user-images.githubusercontent.com/81904597/117298738-4b8ae800-aeaa-11eb-8f9a-19bb71225d78.png)
+
 
 ## [INSHack2019]gflag 
 
 打开文件是G语言，使用在线网站解密 
 
-![1620286220516](/1620286220516.png)
+![image](https://user-images.githubusercontent.com/81904597/117298785-56de1380-aeaa-11eb-81db-2a7a856d49a4.png)
+
 
 在线网站:<https://ncviewer.com/> 
 
-![1620286251942](/1620286251942.png)
+![image](https://user-images.githubusercontent.com/81904597/117298811-5f364e80-aeaa-11eb-9880-9bbca72e866b.png)
 
 ```
 flag{3d_pr1nt3d_fl49}
@@ -236,8 +246,8 @@ f=open('file.txt','r')
 f_read=f.read()
 print Counter(f_read)
 ```
+![image](https://user-images.githubusercontent.com/81904597/117298883-71b08800-aeaa-11eb-83d3-7c22e47c8ea3.png)
 
-![1620286405988](/1620286405988.png)
 
 ```
 flag{huanwe1sik4o!}
