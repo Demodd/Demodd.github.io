@@ -8,7 +8,7 @@ typora-root-url: images
 
 ​	还有打了pycc，主要做了misc和两道web就不贴wp了。
 
-##[CISCN2019 总决赛 Day2 Web1]Easyweb 
+## [CISCN2019 总决赛 Day2 Web1]Easyweb 
 
 访问是一个登陆界面，访问robots.txt 
 
