@@ -1,5 +1,9 @@
-## web380
-
+## 前言
+```
+这周在准备国赛半决赛的awd，所以没怎么学web，一直在研究awd。
+做了几道ctfshow的题。
+```
+## web38
 查看网页源代码
 
 ![图片](https://user-images.githubusercontent.com/81904597/119258090-d255f980-bbfa-11eb-82be-de2002b1fdbd.png)
