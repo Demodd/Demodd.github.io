@@ -2,27 +2,24 @@
 
 查看网页源代码
 
-![1621326870805](黑盒测试.assets/1621326870805.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258090-d255f980-bbfa-11eb-82be-de2002b1fdbd.png)
 
 能看到一个page_3.php的注释，看了一圈没看到什么东西，索性直接访问page.php
 
-![1621326975701](黑盒测试.assets/1621326975701.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258098-daae3480-bbfa-11eb-857b-216b180506fc.png)
 
 那就直接访问
 
 ```
 page.php?id=1
 ```
-
-![1621327092048](黑盒测试.assets/1621327092048.png)
-
+![图片](https://user-images.githubusercontent.com/81904597/119258107-e13cac00-bbfa-11eb-8556-11a42ab3fd7f.png)
 waring弹出，是使用file_get_contents读取文件，我们将1改为index发现直接返回了主页,那我们可以尝试读取有没有flag文件
 
 ```
 page.php?id=flag
 ```
-
-![1621327209618](黑盒测试.assets/1621327209618.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258118-eac61400-bbfa-11eb-815f-8f5175553f83.png)
 
 
 
@@ -41,7 +38,7 @@ file_get_contents — 将整个文件读入一个字符串
 page.php?id=php://filter/convert.base64-encode/resource=index
 ```
 
-![1621327525371](黑盒测试.assets/1621327525371.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258128-f7e30300-bbfa-11eb-89a1-741153c4a2c7.png)
 
 同样也可以读取flag文件
 
@@ -53,15 +50,14 @@ page.php?id=php://filter/convert.base64-encode/resource=flag
 
 ​	查看源代码，按照上一题的方法发现做不出，但是发现了一个alsckdfy经过测试是后台的地址。
 
-![1621344438813](黑盒测试.assets/1621344438813.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258135-016c6b00-bbfb-11eb-9aed-78f8da44f63f.png)
 
 ```
 /alsckdfy/(这里注意路由的写法)
 ```
 
 题目的本意也是让我们找到后台的地址(这才是黑盒测试的本质)
-
-![1621344556409](黑盒测试.assets/1621344556409.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258144-08937900-bbfb-11eb-81dd-de2449139f70.png)
 
 ## web382
 
@@ -78,7 +74,7 @@ admin 'or '1'='1
 
 ## web384
 
-![1621344878096](黑盒测试.assets/1621344878096.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258148-0e895a00-bbfb-11eb-9d9a-91c18dc6ae2f.png)
 
 题目提示前三位是小写字母，后三位是数字，所以题目的本意就是让我们爆破密码呗
 
@@ -114,7 +110,7 @@ burp跑一下字典得到密码为xy123
 http://e9bdf733-b2a1-4b5f-bfe0-df3cf7798266.challenge.ctf.show:8080/install/
 ```
 
-![1621758916507](黑盒测试.assets/1621758916507.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258152-15b06800-bbfb-11eb-8826-35e39fa179bf.png)
 
 根据提示
 
@@ -122,7 +118,7 @@ http://e9bdf733-b2a1-4b5f-bfe0-df3cf7798266.challenge.ctf.show:8080/install/
 http://e9bdf733-b2a1-4b5f-bfe0-df3cf7798266.challenge.ctf.show:8080/install/?install
 ```
 
-![1621758945702](黑盒测试.assets/1621758945702.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258167-29f46500-bbfb-11eb-8ea7-b2aa082fbd1e.png)
 
 在访问后台登录页面,用原密码 admin admin888
 
@@ -131,8 +127,7 @@ http://e9bdf733-b2a1-4b5f-bfe0-df3cf7798266.challenge.ctf.show:8080/install/?ins
 ## web386
 
 按照上一题，接着访问install
-
-![1621759156810](黑盒测试.assets/1621759156810.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258176-337dcd00-bbfb-11eb-9b70-9f1d1b488eb7.png)
 
 提示lock.dat存在无法重复安装，所以我们要尝试将lock.dat删除掉
 
@@ -142,7 +137,7 @@ http://e9bdf733-b2a1-4b5f-bfe0-df3cf7798266.challenge.ctf.show:8080/install/?ins
 http://ed902854-7a20-47d6-b1bd-589fee68e5df.challenge.ctf.show:8080/clear.php?file=/var/www/html/install/lock.dat
 ```
 
-![1621759732372](黑盒测试.assets/1621759732372.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258192-3d9fcb80-bbfb-11eb-9173-418358f249f7.png)
 
 接着就到了上一题的步骤
 
@@ -152,21 +147,20 @@ http://ed902854-7a20-47d6-b1bd-589fee68e5df.challenge.ctf.show:8080/clear.php?fi
 
 开局给了一个提示
 
-![1621759888539](黑盒测试.assets/1621759888539.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258197-47293380-bbfb-11eb-8353-cbc5b897fd13.png)
 
 经过尝试发现不可以。
 
 访问一下robots.txt,发现/debug
 
-![1621761187107](黑盒测试.assets/1621761187107.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258205-4bede780-bbfb-11eb-994d-6ce3e2b769c9.png)
 
 访问一下
-
-![1621762937418](黑盒测试.assets/1621762937418.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258213-51e3c880-bbfb-11eb-87c9-73e09bbd72ef.png)
 
 提示file not exist,那直接file一个文件
 
-![1621763000402](黑盒测试.assets/1621763000402.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258215-560fe600-bbfb-11eb-88df-4f65daa8816a.png)
 
 那肯定也可以包含日志文件，尝试传入一句话失败了，原因是没有接受Post的值，也就是说他可以执行传入的东西，只是不接受，那直接传入php的代码将lock.dat删掉
 
@@ -176,15 +170,14 @@ http://ed902854-7a20-47d6-b1bd-589fee68e5df.challenge.ctf.show:8080/clear.php?fi
 
 
 
-![1621762722074](黑盒测试.assets/1621762722074.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258220-5b6d3080-bbfb-11eb-9747-f015dd0df369.png)
 
-包含以下日志文件让他执行
+包含一下日志文件让他执行
 
-![1621762731781](黑盒测试.assets/1621762731781.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258228-64f69880-bbfb-11eb-8c99-a942bc56df58.png)
 
 然后访问install发现执行成功
-
-![1621762746787](黑盒测试.assets/1621762746787.png)
+![图片](https://user-images.githubusercontent.com/81904597/119258234-69bb4c80-bbfb-11eb-85a3-a160d23419f6.png)
 
 登陆获得flag
 
